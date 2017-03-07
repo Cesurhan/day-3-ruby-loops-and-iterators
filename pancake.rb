@@ -11,6 +11,7 @@ end
 # Defining the ingredients
 NUM_EGGS = 2
 NUM_BUTTER = 1
+
 ingredients = [
   {name: 'eggs', quantity: NUM_EGGS},
   {name: 'butter', quantity: NUM_BUTTER},
@@ -22,7 +23,6 @@ ingredients = [
 puts "*     Let's make some yummy pancakes!     *"
 print_divider
 puts "Ingredients: "
-
 ingredients.each do |ingredient|
   puts "- #{ingredient[:quantity]} #{ingredient[:name]}"
 end
@@ -32,6 +32,7 @@ loop do
   print_divider
   puts "Do you have all the ingredients? (Y/N) "
   answer = gets.chomp.upcase
+
   if answer == 'N'
     puts "I guess it's time to go shopping time then!"
     print print_progress_bar
@@ -48,7 +49,7 @@ steps = [
   {description: "Crack the egg into the well", action: "crack_eggs"},
   {description: "Add the melted butter or oil and half the milk", action: "add_butter_and_milk"},
   {description: "Draw the flour into the liquid by stirring all the time with a wooden spoon until all the flour has been incorporated and then beat well to make a smooth batter", action: "generic_recipe_step"},
-  {description: "Stir in the remaining milk.", action: "generic_recipe_step"},
+  {description: "Stir in the remaining milk.", action: "stir_the_milk"},
   {description: "Beat all the ingredients together for 1 minute in a blender or food processor", action: "generic_recipe_step"},
   {description: "Leave to stand for about 30 minutes", action: "generic_recipe_step"},
   {description: "To make the pancakes, heat a small heavy-based frying until very hot and then turn the heat down to medium.", action: "generic_recipe_step"},
@@ -63,4 +64,43 @@ print_divider
 puts "Check below to follow the steps: "
 steps.each_with_index do |step, index|
   puts (index + 1).to_s + ")" + step[:description]
+end
+# Defining the Steps Actions
+def generic_recipe_step
+  puts "On it!"
+  print_progress_bar
+end
+
+def sift_flour_and_salt
+  counter = 0
+  while counter < 2
+    counter += 1
+    print "Sifting the flour and salt #{counter}."
+    print_progress_bar
+  end
+end
+
+def add_butter_and_milk
+  counter = 0
+  while counter < 1
+    counter += 1
+    print "Adding the butter and milk #{counter}."
+    print_progress_bar
+  end
+end
+
+def stir_the_milk
+  for counter in 1..2
+    print "Stiring the milk #{counter}."
+    print_progress_bar
+  end
+end
+
+def crack_eggs
+  counter = 0
+  while counter < NUM_EGGS
+    counter += 1
+    print "Breaking egg #{counter}"
+    print_progress_bar
+  end
 end
