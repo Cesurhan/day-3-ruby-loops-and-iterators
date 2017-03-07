@@ -90,7 +90,7 @@ end
 
 def stir_the_milk
   for counter in 1..2
-    print "Stiring the milk #{counter}."
+    print "Stirring the milk #{counter}."
     print_progress_bar
   end
 end
