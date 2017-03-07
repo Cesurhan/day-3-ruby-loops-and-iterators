@@ -5,7 +5,7 @@ def print_divider
 end
 # Progress bar prints three times .'s with the delay of half second.
 def print_progress_bar
-  3.times { sleep 0.5; print "." }
+  4.times { sleep 0.5; print "." }
   puts "\n"
 end
 # Defining the ingredients
@@ -25,4 +25,20 @@ puts "Ingredients: "
 
 ingredients.each do |ingredient|
   puts "- #{ingredient[:quantity]} #{ingredient[:name]}"
+end
+# Asking user if he got all ingredients
+loop do
+  puts "\n"
+  print_divider
+  puts "Do you have all the ingredients? (Y/N) "
+  answer = gets.chomp.upcase
+  if answer == 'N'
+    puts "I guess it's time to go shopping time then!"
+    print print_progress_bar
+  elsif answer == 'Y'
+    puts "Well, What are we waiting for? Let's cook!"
+    break
+  else
+    puts "I am sure you've done something wrong... How about another try?"
+  end
 end
