@@ -58,3 +58,9 @@ steps = [
   {description: "Flip the pancake over with a palette knife or fish slice and cook the second side.", action: "generic_recipe_step"},
   {description: "Turn onto a plate, smear with a little butter, sprinkle of sugar and a squeeze of lemon juice or why not try some of our other suggestions for sweet and savoury toppings.", action: "generic_recipe_step"},
 ]
+# Printing Out the Steps
+print_divider
+puts "Check below to follow the steps: "
+steps.each_with_index do |step, index|
+  puts (index + 1).to_s + ")" + step[:description]
+end
