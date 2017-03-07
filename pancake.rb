@@ -53,8 +53,7 @@ steps = [
   {description: "Beat all the ingredients together for 1 minute in a blender or food processor", action: "generic_recipe_step"},
   {description: "Leave to stand for about 30 minutes", action: "generic_recipe_step"},
   {description: "To make the pancakes, heat a small heavy-based frying until very hot and then turn the heat down to medium.", action: "generic_recipe_step"},
-  {description: "Lightly grease with oil and then ladle in enough batter to coat the base of the pan thinly (about 2 tablsp.)", action: "generic_recipe_step"},
-  {description: ", tilting the pan so the mixture spreads evenly.", action: "generic_recipe_step"},
+  {description: "Lightly grease with oil and then ladle in enough batter to coat the base of the pan thinly (about 2 tablsp.), tilting the pan so the mixture spreads evenly.", action: "generic_recipe_step"},
   {description: "Cook over a moderate heat for 1-2 minutes or until the batter looks dry on the top and begins to brown at the edges.", action: "generic_recipe_step"},
   {description: "Flip the pancake over with a palette knife or fish slice and cook the second side.", action: "generic_recipe_step"},
   {description: "Turn onto a plate, smear with a little butter, sprinkle of sugar and a squeeze of lemon juice or why not try some of our other suggestions for sweet and savoury toppings.", action: "generic_recipe_step"},
@@ -100,7 +99,7 @@ def crack_eggs
   counter = 0
   while counter < NUM_EGGS
     counter += 1
-    print "Breaking egg #{counter}"
+    print "Cracking the eggs #{counter}"
     print_progress_bar
   end
 end
@@ -124,3 +123,6 @@ steps.each_with_index do |step, index|
 
   send(step[:action])
 end
+# Done With Cooking
+print_divider
+puts "Well done! Bon Appétit."
